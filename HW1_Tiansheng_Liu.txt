@@ -1,0 +1,12 @@
+Brief Report on Day 1 materials
+Name: Tiansheng Liu
+ID: tl752
+1.	AWS and Linux:
+We covered how to get AWS, Github and Linux ready for our usage. Basically we talked about AWS’s signup and settings, how to connect to remote machines through terminal and Linux command lines. We use AWS because it can run bulks of calculations faster than private laptop. Linus is a great tool to connect to both AWS and Github. So they are going to be our great tools in coding.
+
+2.	Github:
+Github and its connection with Linux. We set up our Github, created a repo and a branch and used Linux to upload, push, change files in Github. Github is a place where people can easily work together on project. Branches prevents people from covering others’ work.
+
+3.	Python:
+We talked about iPython, PyCharm and Conda as tools used with Python. We also covered some basic but important concepts in programming, such as classes. We also tried to print a tree. Python is a very comprehensive programming language that is easy to use. So it will be our major language in the following course. Mastering it will definitely be helpful for our career.
+
