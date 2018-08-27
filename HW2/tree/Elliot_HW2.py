@@ -68,10 +68,10 @@ class Tree(object):
             print_matrix.append([])
             for j in range(2**self.max_depth-1):
                 temp = 2**(self.max_depth-i+1)
-                if((j+1) % (2**(self.max_depth-i-1)) == 0 and (j+1) % (2**(self.max_depth-i)) != 0):
+                if (j+1) % (2**(self.max_depth-i-1)) == 0 and (j+1) % (2**(self.max_depth-i)) != 0:
                     if i == 0:
                         print_matrix[i].append(self.matrix[i].pop(0))
-                    elif (print_matrix[i-1][int(math.floor((j+1)/temp)*temp+temp/2-1)] != '.'):
+                    elif print_matrix[i-1][int(math.floor((j+1)/temp)*temp+temp/2-1)] != '.':
                         print_matrix[i].append(self.matrix[i].pop(0))
                     elif print_matrix[i-1][int(math.floor((j+1)/temp)*temp+temp/2-1)] == '.':
                         print_matrix[i].append('.')
@@ -81,7 +81,7 @@ class Tree(object):
                     print_matrix[i].append('|')
         for i in range(self.max_depth):
             for j in range(2**self.max_depth-1):
-                if(print_matrix[i][j] == '.'):
+                if print_matrix[i][j] == '.':
                     print_matrix[i][j] = '|'
         return print_matrix
 
