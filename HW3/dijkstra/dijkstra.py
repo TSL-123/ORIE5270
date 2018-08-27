@@ -79,4 +79,4 @@ def find_shortest_path(name_txt_file, source, destination):
 
 
 if __name__ == '__main__':
-    print(find_shortest_path("dijkstra.txt", 1, 4))
+    print(find_shortest_path("dijkstra_2.txt", 1, 8))

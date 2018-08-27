@@ -32,11 +32,12 @@ class graph_class(object):
                 elif current == 'weight':
                     weight = weight+i
             self.graph_dict[line1] = local_dict
+            #print(self.graph_dict)
 
     def search_cycle(self):
         global que
         que = []
-        N = len(self.nodes) + 1
+        N = len(self.nodes)
         for i in self.nodes:
             for j in self.nodes:
                 if i != j:
@@ -56,23 +57,30 @@ class graph_class(object):
                                 #print(times,k,point,F)
 
                                 #print(times, k, point, F[(times, k)], F[(times-1, k)])
+                                #print(F[(times-1, point)]+self.graph_dict[k][point])
                                 F[(times, k)] = min(F[(times, k)], F[(times-1, point)]+self.graph_dict[k][point])
                                 if F[(times, k)] < F[(times-1, k)]:
-                                    trace[k] = point
-                                #print(times , k, F[(times, k)])
+                                    trace[point] = k
+                                #print(F)
+                                #print(trace)
                     if F[(N, source)] < F[(N-1, source)]:
-                        que.append(source)
+                        #print(trace)
+                        #print(source, destination, F[(N, source)], F[(N-1, source)])
+                        que.append(destination)
                         record = set([])
 
-                        current_point = source
+                        current_point = destination
                         while current_point not in record:
                             record.add(current_point)
                             que.append(trace[current_point])
                             current_point = trace[current_point]
-                        delete_point = source
+                        #print(que)
+                        delete_point = destination
                         while delete_point != current_point:
                             que.pop(0)
                             delete_point = que[0]
+                        #print(self.graph_dict)
+                        que.reverse()
                         return que
 
 def find_negative_cicles(name_txt_file):
@@ -81,4 +89,4 @@ def find_negative_cicles(name_txt_file):
 
 
 if __name__ == '__main__':
-        print(find_negative_cicles("bellman_ford.txt"))
+        print(find_negative_cicles("bellman_ford_2.txt"))
